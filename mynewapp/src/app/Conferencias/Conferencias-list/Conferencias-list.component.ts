@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Conferencia } from '../Conferencia';
+import { ConferenciaService } from '../Conferencia.service';
+
 
 @Component({
   standalone: false,
@@ -10,9 +12,20 @@ import { Conferencia } from '../Conferencia';
 export class ConferenciasListComponent implements OnInit {
 
   Conferencias: Array<Conferencia> = [];
-  constructor() { }
+  constructor(private conferenciaService: ConferenciaService) { }
+
+  getConferencias(): void 
+  {
+    this.conferenciaService.getConferencias().subscribe(
+      (Conferencias) => 
+      {
+        this.Conferencias=Conferencias;
+      }
+    );
+  }
 
   ngOnInit() {
+    this.getConferencias();
   }
 
 }

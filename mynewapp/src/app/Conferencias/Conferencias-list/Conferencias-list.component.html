@@ -1,3 +1,61 @@
-<p>
-  Conferencias-list works!
-</p>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conferencias</title>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class = "col">
+                <h1 style="background-color: #1E90FF;">
+                    Conferencias
+                </h1>
+            </div>    
+        </div>
+        <div class="row">
+            <div class="col">
+                
+                <table class="table table-striped">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Starting</th>
+                        <th scope="col">Ending</th>
+                      </tr>
+                    </thead>
+                    <tbody id="series">
+                      <tr *ngFor="let Conferencia of Conferencias">
+                        <td style = "font-weight:bold;">
+                          {{Conferencia.id}}
+                        </td>
+                        <td style = "color:#1E90FF">
+                          {{Conferencia.name}}
+                        </td>
+                        <td>
+                          {{Conferencia.starting}}
+                        </td>
+                        <td>
+                          {{Conferencia.ending}}
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+            <div class="col"></div>
+        </div>
+        <div class = "row">
+            <div class="col">
+                <h3 style = "font-weight: normal;" id="promedio">
+                  upcoming conferences: {{"3"}}
+                </h3>
+            </div>
+        </div>
+    </div>
+</body>
+
+
+</html>
